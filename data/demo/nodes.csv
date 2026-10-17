@@ -1,0 +1,228 @@
+id,strain,country,year,host,isolation_source,gc_percent,length_mb,st,n_amr,carbapenemase,esbl,amr_genes
+DEMO_0001,souche-simulée-1,Italie,2020,Homo sapiens,expectoration,57.2,5.605,ST258,5,0,0,blaSHV-11;catA1;fosA;oqxA;sul2
+DEMO_0002,souche-simulée-2,Italie,2020,Homo sapiens,écouvillon rectal,57.14,5.641,ST258,10,0,0,aph(3'')-Ib;blaSHV-11;blaTEM-1;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;tet(A)
+DEMO_0003,souche-simulée-3,Italie,2022,Homo sapiens,sang,57.17,5.431,ST258,8,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-27;blaTEM-1;catA1;fosA;oqxA;tet(A)
+DEMO_0004,souche-simulée-4,Italie,2020,Homo sapiens,sang,57.14,5.467,ST258,9,0,0,blaTEM-1;catA1;fosA;mph(A);oqxA;oqxB;qnrS1;sul1;sul2
+DEMO_0005,souche-simulée-5,Italie,2021,Homo sapiens,expectoration,57.52,5.604,ST258,8,0,1,blaCTX-M-14;blaTEM-1;catA1;dfrA12;fosA;oqxA;qnrS1;sul1
+DEMO_0006,souche-simulée-6,Grèce,2020,Homo sapiens,expectoration,57.27,5.695,ST258,10,1,0,blaNDM-1;blaTEM-1;catA1;dfrA12;fosA;oqxA;oqxB;qnrS1;sul1;sul2
+DEMO_0007,souche-simulée-7,Grèce,2018,Homo sapiens,expectoration,57.06,5.742,ST258,10,1,0,aac(6')-Ib-cr;blaNDM-1;blaSHV-11;blaTEM-1;catA1;fosA;oqxA;oqxB;qnrS1;sul2
+DEMO_0008,souche-simulée-8,Grèce,2020,Homo sapiens,écouvillon rectal,57.18,5.126,ST258,6,1,0,aac(6')-Ib-cr;blaNDM-1;dfrA12;fosA;oqxA;qnrS1
+DEMO_0009,souche-simulée-9,Grèce,2018,Homo sapiens,urine,57.17,5.62,ST258,10,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaNDM-1;blaSHV-11;blaTEM-1;fosA;mph(A);oqxA;oqxB;tet(A)
+DEMO_0010,souche-simulée-10,Grèce,2018,Homo sapiens,urine,57.39,5.592,ST258,10,1,1,aac(6')-Ib-cr;blaCTX-M-14;blaNDM-1;blaSHV-11;catA1;dfrA12;fosA;oqxA;qnrS1;tet(A)
+DEMO_0011,souche-simulée-11,Grèce,2019,Homo sapiens,sang,57.39,5.594,ST258,7,1,0,blaNDM-1;blaSHV-11;blaTEM-1;catA1;fosA;oqxA;sul2
+DEMO_0012,souche-simulée-12,Grèce,2019,Homo sapiens,sang,57.45,5.746,ST258,11,1,1,aac(6')-Ib-cr;blaCTX-M-14;blaNDM-1;blaSHV-11;catA1;fosA;oqxA;oqxB;qnrS1;sul1;sul2
+DEMO_0013,souche-simulée-13,Grèce,2018,Homo sapiens,écouvillon rectal,57.6,5.51,ST258,8,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-15;blaSHV-11;fosA;oqxA;qnrS1;tet(A)
+DEMO_0014,souche-simulée-14,Grèce,2018,Homo sapiens,urine,57.4,5.326,ST258,10,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-27;blaNDM-1;fosA;mph(A);oqxA;oqxB;sul2;tet(A)
+DEMO_0015,souche-simulée-15,Grèce,2018,Homo sapiens,écouvillon rectal,56.97,5.665,ST258,7,0,0,aph(3'')-Ib;blaSHV-11;fosA;oqxA;qnrS1;sul2;tet(A)
+DEMO_0016,souche-simulée-16,Grèce,2019,Homo sapiens,écouvillon rectal,57.32,5.49,ST258,10,1,1,aph(3'')-Ib;blaCTX-M-27;blaNDM-1;blaTEM-1;catA1;fosA;oqxA;oqxB;qnrS1;sul2
+DEMO_0017,souche-simulée-17,Grèce,2020,Homo sapiens,écouvillon rectal,57.61,5.738,ST258,6,1,1,blaCTX-M-15;blaNDM-1;dfrA12;fosA;oqxA;oqxB
+DEMO_0018,souche-simulée-18,Grèce,2018,Homo sapiens,expectoration,57.22,5.434,ST258,10,1,0,aac(6')-Ib-cr;blaNDM-1;blaSHV-11;blaTEM-1;catA1;dfrA12;fosA;oqxA;qnrS1;tet(A)
+DEMO_0019,souche-simulée-19,Grèce,2012,Homo sapiens,sang,57.3,5.675,ST11,5,1,0,aac(6')-Ib-cr;blaOXA-232;fosA;oqxA;tet(A)
+DEMO_0020,souche-simulée-20,Grèce,2013,Homo sapiens,expectoration,57.44,5.278,ST11,9,1,1,blaCTX-M-27;blaOXA-232;catA1;fosA;oqxA;oqxB;sul1;sul2;tet(A)
+DEMO_0021,souche-simulée-21,Grèce,2012,Homo sapiens,urine,57.43,5.712,ST11,7,1,1,aac(6')-Ib-cr;blaCTX-M-15;blaOXA-232;fosA;mph(A);oqxA;tet(A)
+DEMO_0022,souche-simulée-22,Grèce,2012,Homo sapiens,sang,57.3,5.671,ST11,7,1,1,blaCTX-M-14;blaOXA-232;blaSHV-11;fosA;oqxA;sul2;tet(A)
+DEMO_0023,souche-simulée-23,Grèce,2013,Homo sapiens,urine,57.24,5.396,ST11,6,1,0,blaOXA-232;fosA;mph(A);oqxA;qnrS1;tet(A)
+DEMO_0024,souche-simulée-24,Grèce,2014,Homo sapiens,urine,57.21,5.595,ST11,11,1,1,aph(3'')-Ib;blaCTX-M-14;blaOXA-232;dfrA12;fosA;mph(A);oqxA;oqxB;qnrS1;sul1;tet(A)
+DEMO_0025,souche-simulée-25,Grèce,2012,Homo sapiens,expectoration,57.37,5.491,ST11,8,1,1,aac(6')-Ib-cr;blaCTX-M-14;blaOXA-232;blaTEM-1;fosA;oqxA;oqxB;sul2
+DEMO_0026,souche-simulée-26,Grèce,2013,Homo sapiens,sang,57.21,5.691,ST11,8,1,1,aac(6')-Ib-cr;blaCTX-M-14;blaOXA-232;dfrA12;fosA;oqxA;oqxB;tet(A)
+DEMO_0027,souche-simulée-27,Grèce,2012,Homo sapiens,sang,57.4,5.61,ST11,6,1,1,blaCTX-M-15;blaOXA-232;dfrA12;fosA;oqxA;sul2
+DEMO_0028,souche-simulée-28,,2013,Homo sapiens,urine,57.12,5.509,ST11,7,1,0,aac(6')-Ib-cr;blaOXA-232;dfrA12;fosA;oqxA;oqxB;sul1
+DEMO_0029,souche-simulée-29,Grèce,2012,Homo sapiens,urine,57.57,5.672,ST11,10,0,0,aac(6')-Ib-cr;blaSHV-11;blaTEM-1;catA1;dfrA12;fosA;oqxA;sul1;sul2;tet(A)
+DEMO_0030,souche-simulée-30,Grèce,2012,Homo sapiens,urine,57.49,5.463,ST11,13,1,1,aac(6')-Ib-cr;blaCTX-M-15;blaOXA-232;blaSHV-11;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;sul1;sul2;tet(A)
+DEMO_0031,souche-simulée-31,,2012,Homo sapiens,sang,57.48,5.571,ST11,7,1,0,aac(6')-Ib-cr;blaOXA-232;fosA;oqxA;qnrS1;sul1;tet(A)
+DEMO_0032,souche-simulée-32,Grèce,2014,Homo sapiens,expectoration,57.43,5.526,ST11,8,1,0,aph(3'')-Ib;blaOXA-232;blaTEM-1;fosA;oqxA;oqxB;qnrS1;tet(A)
+DEMO_0033,souche-simulée-33,États-Unis,2016,Homo sapiens,urine,57.51,5.626,ST11,7,1,0,aac(6')-Ib-cr;blaOXA-232;blaSHV-11;dfrA12;fosA;oqxA;sul2
+DEMO_0034,souche-simulée-34,États-Unis,2016,Homo sapiens,écouvillon rectal,57.49,5.518,ST11,10,1,1,aph(3'')-Ib;blaCTX-M-14;blaOXA-232;blaSHV-11;catA1;fosA;mph(A);oqxA;sul1;tet(A)
+DEMO_0035,souche-simulée-35,États-Unis,2017,Homo sapiens,urine,57.3,5.81,ST11,9,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-14;blaOXA-232;blaSHV-11;fosA;oqxA;sul1;sul2
+DEMO_0036,souche-simulée-36,États-Unis,2017,Homo sapiens,urine,57.63,5.741,ST11,7,1,1,aac(6')-Ib-cr;blaCTX-M-15;blaOXA-232;blaTEM-1;fosA;oqxA;sul1
+DEMO_0037,souche-simulée-37,États-Unis,2016,Homo sapiens,urine,57.57,5.627,ST11,5,1,0,blaOXA-232;catA1;dfrA12;fosA;oqxA
+DEMO_0038,souche-simulée-38,États-Unis,2017,Homo sapiens,urine,57.34,5.572,ST11,10,1,0,aac(6')-Ib-cr;blaOXA-232;blaSHV-11;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;tet(A)
+DEMO_0039,souche-simulée-39,États-Unis,2017,Homo sapiens,sang,57.27,5.503,ST11,11,1,1,aph(3'')-Ib;blaCTX-M-15;blaOXA-232;blaSHV-11;blaTEM-1;catA1;dfrA12;fosA;oqxA;qnrS1;tet(A)
+DEMO_0040,souche-simulée-40,États-Unis,2017,Homo sapiens,écouvillon rectal,57.32,5.343,ST11,12,0,1,aph(3'')-Ib;blaCTX-M-14;blaTEM-1;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;sul1;sul2;tet(A)
+DEMO_0041,souche-simulée-41,États-Unis,2015,Homo sapiens,sang,57.13,5.569,ST11,8,1,0,aac(6')-Ib-cr;blaOXA-232;blaTEM-1;catA1;fosA;oqxA;sul1;sul2
+DEMO_0042,souche-simulée-42,États-Unis,2016,Homo sapiens,expectoration,57.35,5.078,ST11,4,1,0,aph(3'')-Ib;blaOXA-232;fosA;oqxA
+DEMO_0043,souche-simulée-43,,2016,Homo sapiens,écouvillon rectal,57.05,5.768,ST11,8,1,0,blaOXA-232;blaSHV-11;blaTEM-1;fosA;mph(A);oqxA;qnrS1;sul1
+DEMO_0044,souche-simulée-44,États-Unis,2017,Homo sapiens,écouvillon rectal,57.48,5.397,ST11,9,1,1,aac(6')-Ib-cr;blaCTX-M-27;blaOXA-232;blaTEM-1;catA1;fosA;mph(A);oqxA;tet(A)
+DEMO_0045,souche-simulée-45,États-Unis,2017,Homo sapiens,urine,57.17,5.623,ST11,9,1,1,aac(6')-Ib-cr;blaCTX-M-14;blaOXA-232;blaSHV-11;dfrA12;fosA;mph(A);oqxA;qnrS1
+DEMO_0046,souche-simulée-46,États-Unis,2015,Homo sapiens,sang,57.4,5.478,ST11,7,1,1,blaCTX-M-14;blaOXA-232;blaSHV-11;fosA;mph(A);oqxA;sul2
+DEMO_0047,souche-simulée-47,Chine,2011,Homo sapiens,expectoration,57.2,5.543,ST11,9,1,1,blaCTX-M-15;blaOXA-48;blaSHV-11;blaTEM-1;dfrA12;fosA;oqxA;oqxB;sul1
+DEMO_0048,souche-simulée-48,Chine,2012,Homo sapiens,urine,57.22,5.453,ST11,10,1,1,aph(3'')-Ib;blaCTX-M-27;blaOXA-48;blaSHV-11;dfrA12;fosA;mph(A);oqxA;oqxB;tet(A)
+DEMO_0049,souche-simulée-49,Chine,2012,Homo sapiens,écouvillon rectal,57.21,5.612,ST11,6,1,1,aac(6')-Ib-cr;blaCTX-M-14;blaOXA-48;fosA;oqxA;tet(A)
+DEMO_0050,souche-simulée-50,Chine,2011,Homo sapiens,expectoration,57.13,5.633,ST11,11,0,1,aac(6')-Ib-cr;blaCTX-M-15;blaTEM-1;catA1;dfrA12;fosA;oqxA;oqxB;qnrS1;sul1;tet(A)
+DEMO_0051,souche-simulée-51,Chine,2010,Homo sapiens,expectoration,57.12,5.717,ST11,9,1,1,aac(6')-Ib-cr;blaCTX-M-27;blaOXA-48;blaTEM-1;fosA;mph(A);oqxA;sul2;tet(A)
+DEMO_0052,souche-simulée-52,Brésil,2017,Homo sapiens,urine,57.14,5.693,ST512,8,1,0,aac(6')-Ib-cr;blaKPC-2;catA1;fosA;mph(A);oqxA;sul2;tet(A)
+DEMO_0053,souche-simulée-53,,2018,Homo sapiens,expectoration,57.41,5.53,ST512,10,1,0,aac(6')-Ib-cr;blaKPC-2;blaSHV-11;dfrA12;fosA;oqxA;oqxB;qnrS1;sul1;tet(A)
+DEMO_0054,souche-simulée-54,,2018,Homo sapiens,expectoration,57.52,5.682,ST512,6,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaKPC-2;fosA;oqxA;oqxB
+DEMO_0055,souche-simulée-55,Brésil,2017,Homo sapiens,urine,57.17,5.419,ST512,5,1,0,aac(6')-Ib-cr;blaKPC-2;fosA;oqxA;oqxB
+DEMO_0056,souche-simulée-56,Brésil,2018,Homo sapiens,écouvillon rectal,57.42,5.547,ST512,9,1,0,aph(3'')-Ib;blaKPC-2;blaTEM-1;fosA;mph(A);oqxA;oqxB;qnrS1;sul1
+DEMO_0057,souche-simulée-57,Brésil,2016,Homo sapiens,urine,57.08,5.552,ST512,10,1,1,aph(3'')-Ib;blaCTX-M-27;blaKPC-2;catA1;fosA;mph(A);oqxA;oqxB;qnrS1;tet(A)
+DEMO_0058,souche-simulée-58,Brésil,2017,Homo sapiens,urine,57.42,5.555,ST512,10,1,1,aph(3'')-Ib;blaCTX-M-14;blaKPC-2;blaTEM-1;dfrA12;fosA;oqxA;qnrS1;sul1;sul2
+DEMO_0059,souche-simulée-59,Brésil,2016,Homo sapiens,écouvillon rectal,57.31,5.425,ST512,6,1,0,aph(3'')-Ib;blaKPC-2;fosA;mph(A);oqxA;qnrS1
+DEMO_0060,souche-simulée-60,Brésil,2016,Homo sapiens,sang,57.37,5.7,ST512,11,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaKPC-2;blaSHV-11;catA1;dfrA12;fosA;oqxA;oqxB;qnrS1;tet(A)
+DEMO_0061,souche-simulée-61,Brésil,2018,Homo sapiens,expectoration,57.53,5.182,ST512,9,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-14;blaKPC-2;blaTEM-1;fosA;oqxA;oqxB;sul2
+DEMO_0062,souche-simulée-62,Brésil,2017,Homo sapiens,expectoration,57.5,5.673,ST512,10,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaKPC-2;blaSHV-11;blaTEM-1;fosA;oqxA;oqxB;sul1;sul2
+DEMO_0063,souche-simulée-63,Chine,2023,Homo sapiens,sang,57.04,5.611,ST147,4,1,0,blaNDM-1;dfrA12;fosA;oqxA
+DEMO_0064,souche-simulée-64,Chine,2023,Homo sapiens,écouvillon rectal,57.5,5.495,ST147,5,1,0,aph(3'')-Ib;blaNDM-1;fosA;oqxA;sul1
+DEMO_0065,souche-simulée-65,,2024,Homo sapiens,sang,57.41,5.567,ST147,8,1,0,blaNDM-1;catA1;fosA;mph(A);oqxA;oqxB;sul1;sul2
+DEMO_0066,souche-simulée-66,Chine,2024,Homo sapiens,urine,57.2,5.467,ST147,11,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaNDM-1;blaTEM-1;dfrA12;fosA;mph(A);oqxA;oqxB;qnrS1;sul1
+DEMO_0067,souche-simulée-67,Chine,2023,Homo sapiens,écouvillon rectal,57.38,5.684,ST147,11,1,1,aph(3'')-Ib;blaCTX-M-15;blaNDM-1;blaTEM-1;catA1;dfrA12;fosA;oqxA;qnrS1;sul2;tet(A)
+DEMO_0068,souche-simulée-68,,2023,Homo sapiens,urine,57.32,5.705,ST147,7,1,1,blaCTX-M-14;blaNDM-1;blaTEM-1;catA1;fosA;oqxA;sul1
+DEMO_0069,souche-simulée-69,Chine,2024,Homo sapiens,écouvillon rectal,57.34,5.657,ST147,6,1,0,blaNDM-1;blaTEM-1;fosA;oqxA;sul1;tet(A)
+DEMO_0070,souche-simulée-70,Chine,2022,Homo sapiens,sang,57.04,5.172,ST147,9,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-15;blaNDM-1;catA1;fosA;mph(A);oqxA;sul1
+DEMO_0071,souche-simulée-71,Chine,2023,Homo sapiens,urine,57.37,5.616,ST147,6,1,0,aph(3'')-Ib;blaNDM-1;blaSHV-11;fosA;oqxA;qnrS1
+DEMO_0072,souche-simulée-72,Chine,2022,Homo sapiens,sang,57.15,5.371,ST147,8,1,0,aac(6')-Ib-cr;blaNDM-1;blaTEM-1;fosA;oqxA;qnrS1;sul2;tet(A)
+DEMO_0073,souche-simulée-73,Chine,2022,Homo sapiens,sang,57.36,5.41,ST147,9,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-27;blaSHV-11;fosA;mph(A);oqxA;oqxB;sul2
+DEMO_0074,souche-simulée-74,Italie,2018,Homo sapiens,sang,57.23,5.729,ST392,12,1,1,aac(6')-Ib-cr;blaCTX-M-14;blaKPC-2;blaTEM-1;dfrA12;fosA;mph(A);oqxA;oqxB;qnrS1;sul2;tet(A)
+DEMO_0075,souche-simulée-75,Italie,2017,Homo sapiens,expectoration,57.17,5.483,ST392,11,1,1,aph(3'')-Ib;blaCTX-M-15;blaKPC-2;blaSHV-11;dfrA12;fosA;mph(A);oqxA;oqxB;sul2;tet(A)
+DEMO_0076,souche-simulée-76,Italie,2019,Homo sapiens,écouvillon rectal,57.29,5.458,ST392,7,1,0,aac(6')-Ib-cr;blaKPC-2;blaSHV-11;fosA;oqxA;oqxB;tet(A)
+DEMO_0077,souche-simulée-77,,2017,Homo sapiens,écouvillon rectal,57.55,5.807,ST392,10,1,0,aac(6')-Ib-cr;blaKPC-2;blaTEM-1;catA1;dfrA12;fosA;oqxA;oqxB;sul1;tet(A)
+DEMO_0078,souche-simulée-78,Italie,2018,Homo sapiens,urine,57.26,5.533,ST392,11,1,0,aac(6')-Ib-cr;blaKPC-2;blaSHV-11;blaTEM-1;catA1;dfrA12;fosA;mph(A);oqxA;sul2;tet(A)
+DEMO_0079,souche-simulée-79,Italie,2017,Homo sapiens,sang,57.23,5.434,ST392,7,1,0,aac(6')-Ib-cr;blaKPC-2;blaTEM-1;dfrA12;fosA;oqxA;sul2
+DEMO_0080,souche-simulée-80,Italie,2018,Homo sapiens,urine,57.51,5.58,ST392,11,1,1,blaCTX-M-14;blaKPC-2;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;qnrS1;sul1;tet(A)
+DEMO_0081,souche-simulée-81,Italie,2018,Homo sapiens,sang,57.38,5.57,ST392,11,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-14;blaKPC-2;blaSHV-11;catA1;fosA;mph(A);oqxA;oqxB;qnrS1
+DEMO_0082,souche-simulée-82,Italie,2017,Homo sapiens,sang,57.45,5.948,ST392,9,1,0,blaKPC-2;blaSHV-11;blaTEM-1;dfrA12;fosA;mph(A);oqxA;oqxB;tet(A)
+DEMO_0083,souche-simulée-83,Italie,2018,Homo sapiens,urine,57.29,5.937,ST392,10,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaKPC-2;blaTEM-1;fosA;mph(A);oqxA;oqxB;sul1;sul2
+DEMO_0084,souche-simulée-84,,2019,Homo sapiens,écouvillon rectal,57.37,5.494,ST392,13,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-27;blaKPC-2;blaSHV-11;catA1;fosA;mph(A);oqxA;oqxB;sul1;sul2;tet(A)
+DEMO_0085,souche-simulée-85,Inde,2012,Homo sapiens,écouvillon rectal,57.26,6.006,ST392,8,0,0,blaTEM-1;catA1;fosA;mph(A);oqxA;qnrS1;sul1;tet(A)
+DEMO_0086,souche-simulée-86,Inde,2011,Homo sapiens,écouvillon rectal,57.35,5.446,ST392,7,0,1,blaCTX-M-27;blaTEM-1;fosA;mph(A);oqxA;qnrS1;sul2
+DEMO_0087,souche-simulée-87,Inde,2013,Homo sapiens,écouvillon rectal,57.36,5.501,ST392,8,0,0,aac(6')-Ib-cr;aph(3'')-Ib;blaSHV-11;fosA;mph(A);oqxA;oqxB;sul1
+DEMO_0088,souche-simulée-88,Inde,2013,Homo sapiens,écouvillon rectal,57.15,5.517,ST392,6,0,1,blaCTX-M-14;blaSHV-11;catA1;fosA;oqxA;oqxB
+DEMO_0089,souche-simulée-89,Afrique du Sud,2013,Homo sapiens,expectoration,57.45,5.187,ST307,8,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-15;blaOXA-48;blaSHV-11;fosA;mph(A);oqxA
+DEMO_0090,souche-simulée-90,Afrique du Sud,2014,Homo sapiens,expectoration,57.3,5.874,ST307,3,0,0,fosA;oqxA;tet(A)
+DEMO_0091,souche-simulée-91,Afrique du Sud,2012,Homo sapiens,sang,57.13,5.407,ST307,6,1,1,blaCTX-M-15;blaOXA-48;blaSHV-11;fosA;oqxA;tet(A)
+DEMO_0092,souche-simulée-92,Afrique du Sud,2014,Homo sapiens,urine,57.25,5.547,ST307,8,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaOXA-48;catA1;dfrA12;fosA;oqxA;tet(A)
+DEMO_0093,souche-simulée-93,Afrique du Sud,2014,Homo sapiens,expectoration,57.49,5.656,ST307,5,1,1,blaCTX-M-14;blaOXA-48;fosA;oqxA;oqxB
+DEMO_0094,souche-simulée-94,,2013,Homo sapiens,sang,57.28,5.74,ST307,8,1,1,aph(3'')-Ib;blaCTX-M-27;blaOXA-48;blaTEM-1;fosA;mph(A);oqxA;sul1
+DEMO_0095,souche-simulée-95,Afrique du Sud,2012,Homo sapiens,urine,57.3,5.417,ST307,11,1,1,aph(3'')-Ib;blaCTX-M-15;blaOXA-48;blaTEM-1;catA1;fosA;mph(A);oqxA;oqxB;sul1;tet(A)
+DEMO_0096,souche-simulée-96,Afrique du Sud,2014,Homo sapiens,urine,57.18,5.495,ST307,11,1,1,aph(3'')-Ib;blaCTX-M-15;blaOXA-48;catA1;dfrA12;fosA;oqxA;oqxB;qnrS1;sul2;tet(A)
+DEMO_0097,souche-simulée-97,Afrique du Sud,2014,Homo sapiens,urine,57.25,5.619,ST307,7,0,1,blaCTX-M-15;blaTEM-1;catA1;dfrA12;fosA;oqxA;oqxB
+DEMO_0098,souche-simulée-98,Afrique du Sud,2012,Homo sapiens,sang,57.48,5.63,ST307,5,1,0,blaOXA-48;blaSHV-11;fosA;mph(A);oqxA
+DEMO_0099,souche-simulée-99,,2014,Homo sapiens,sang,57.4,5.361,ST307,9,1,1,aph(3'')-Ib;blaCTX-M-15;blaOXA-48;blaTEM-1;dfrA12;fosA;mph(A);oqxA;tet(A)
+DEMO_0100,souche-simulée-100,Inde,2024,Homo sapiens,écouvillon rectal,57.32,5.348,ST307,9,1,1,blaCTX-M-14;blaKPC-2;dfrA12;fosA;mph(A);oqxA;oqxB;sul1;sul2
+DEMO_0101,souche-simulée-101,Inde,2023,Homo sapiens,sang,57.19,5.494,ST307,10,1,0,blaKPC-2;blaSHV-11;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;sul1;tet(A)
+DEMO_0102,souche-simulée-102,Inde,2024,Homo sapiens,écouvillon rectal,57.47,5.502,ST307,10,1,0,aph(3'')-Ib;blaKPC-2;blaSHV-11;catA1;fosA;mph(A);oqxA;sul1;sul2;tet(A)
+DEMO_0103,souche-simulée-103,Inde,2024,Homo sapiens,sang,57.2,5.449,ST307,7,1,1,aph(3'')-Ib;blaCTX-M-27;blaKPC-2;fosA;oqxA;oqxB;sul1
+DEMO_0104,souche-simulée-104,Inde,2024,Homo sapiens,urine,57.37,5.523,ST307,10,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaKPC-2;blaSHV-11;blaTEM-1;dfrA12;fosA;mph(A);oqxA;sul2
+DEMO_0105,souche-simulée-105,Inde,2025,Homo sapiens,écouvillon rectal,57.38,5.691,ST307,6,1,1,blaCTX-M-14;blaKPC-2;catA1;fosA;oqxA;sul2
+DEMO_0106,souche-simulée-106,Inde,2025,Homo sapiens,urine,57.23,5.149,ST307,10,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-27;blaKPC-2;catA1;fosA;oqxA;oqxB;qnrS1;sul2
+DEMO_0107,souche-simulée-107,,2023,Homo sapiens,sang,57.33,5.631,ST307,9,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaKPC-2;catA1;fosA;mph(A);oqxA;sul2;tet(A)
+DEMO_0108,souche-simulée-108,,2024,Homo sapiens,urine,57.43,5.439,ST307,7,1,1,blaCTX-M-27;blaKPC-2;fosA;mph(A);oqxA;oqxB;sul1
+DEMO_0109,souche-simulée-109,Inde,2023,Homo sapiens,urine,57.29,5.795,ST307,6,1,1,blaCTX-M-27;blaKPC-2;dfrA12;fosA;oqxA;oqxB
+DEMO_0110,souche-simulée-110,Inde,2025,Homo sapiens,expectoration,57.43,5.367,ST307,4,0,1,aph(3'')-Ib;blaCTX-M-27;fosA;oqxA
+DEMO_0111,souche-simulée-111,Inde,2024,Homo sapiens,urine,57.35,5.318,ST307,8,1,1,aac(6')-Ib-cr;blaCTX-M-27;blaKPC-2;blaTEM-1;fosA;mph(A);oqxA;qnrS1
+DEMO_0112,souche-simulée-112,Inde,2025,Homo sapiens,urine,57.41,5.468,ST307,6,1,0,blaKPC-2;dfrA12;fosA;oqxA;qnrS1;sul1
+DEMO_0113,souche-simulée-113,Inde,2023,Homo sapiens,urine,57.23,5.542,ST307,5,0,1,blaCTX-M-14;dfrA12;fosA;oqxA;qnrS1
+DEMO_0114,souche-simulée-114,Nigeria,2015,Homo sapiens,expectoration,57.36,5.771,ST15,3,0,0,fosA;oqxA;oqxB
+DEMO_0115,souche-simulée-115,Nigeria,2015,Homo sapiens,expectoration,57.14,5.387,ST15,11,0,1,aac(6')-Ib-cr;blaCTX-M-15;blaSHV-11;blaTEM-1;catA1;fosA;oqxA;oqxB;sul1;sul2;tet(A)
+DEMO_0116,souche-simulée-116,,2015,Homo sapiens,urine,57.48,5.847,ST15,8,0,0,aph(3'')-Ib;blaTEM-1;dfrA12;fosA;oqxA;oqxB;sul1;tet(A)
+DEMO_0117,souche-simulée-117,Nigeria,2014,Homo sapiens,urine,57.17,5.721,ST15,5,0,1,blaCTX-M-27;fosA;mph(A);oqxA;oqxB
+DEMO_0118,souche-simulée-118,Nigeria,2015,Homo sapiens,écouvillon rectal,57.52,5.526,ST15,9,0,0,aac(6')-Ib-cr;dfrA12;fosA;mph(A);oqxA;qnrS1;sul1;sul2;tet(A)
+DEMO_0119,souche-simulée-119,Nigeria,2016,Homo sapiens,écouvillon rectal,57.37,5.654,ST15,10,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-27;blaSHV-11;fosA;oqxA;oqxB;sul1;sul2;tet(A)
+DEMO_0120,souche-simulée-120,Nigeria,2014,Homo sapiens,sang,57.24,5.456,ST15,9,0,0,aac(6')-Ib-cr;blaSHV-11;blaTEM-1;catA1;fosA;oqxA;qnrS1;sul2;tet(A)
+DEMO_0121,souche-simulée-121,Nigeria,2014,Homo sapiens,urine,57.52,5.399,ST15,6,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-14;catA1;fosA;oqxA
+DEMO_0122,souche-simulée-122,Nigeria,2016,Homo sapiens,écouvillon rectal,57.37,5.768,ST15,5,0,0,blaTEM-1;catA1;fosA;mph(A);oqxA
+DEMO_0123,souche-simulée-123,Nigeria,2015,Homo sapiens,expectoration,57.31,5.632,ST15,3,0,0,fosA;oqxA;qnrS1
+DEMO_0124,souche-simulée-124,Nigeria,2015,Homo sapiens,expectoration,57.24,5.384,ST15,10,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-27;blaSHV-11;blaTEM-1;fosA;mph(A);oqxA;qnrS1;tet(A)
+DEMO_0125,souche-simulée-125,Nigeria,2014,Homo sapiens,sang,57.12,5.406,ST15,8,0,1,blaCTX-M-14;blaTEM-1;dfrA12;fosA;mph(A);oqxA;qnrS1;sul2
+DEMO_0126,souche-simulée-126,Chine,2013,Homo sapiens,écouvillon rectal,57.16,5.769,ST15,5,0,0,aph(3'')-Ib;blaSHV-11;dfrA12;fosA;oqxA
+DEMO_0127,souche-simulée-127,Chine,2012,Homo sapiens,écouvillon rectal,57.37,5.415,ST15,7,0,0,dfrA12;fosA;mph(A);oqxA;oqxB;sul1;sul2
+DEMO_0128,souche-simulée-128,Chine,2011,Homo sapiens,sang,57.31,5.508,ST15,9,0,1,aph(3'')-Ib;blaCTX-M-14;blaTEM-1;fosA;mph(A);oqxA;qnrS1;sul2;tet(A)
+DEMO_0129,souche-simulée-129,Chine,2013,Homo sapiens,sang,57.38,5.231,ST15,10,0,1,blaCTX-M-14;blaSHV-11;blaTEM-1;catA1;dfrA12;fosA;oqxA;qnrS1;sul1;tet(A)
+DEMO_0130,souche-simulée-130,Chine,2011,Homo sapiens,sang,57.14,5.291,ST15,8,0,0,aac(6')-Ib-cr;aph(3'')-Ib;blaSHV-11;blaTEM-1;catA1;fosA;mph(A);oqxA
+DEMO_0131,souche-simulée-131,Chine,2011,Homo sapiens,expectoration,57.33,5.557,ST15,9,0,0,aac(6')-Ib-cr;blaSHV-11;blaTEM-1;fosA;oqxA;oqxB;qnrS1;sul1;sul2
+DEMO_0132,souche-simulée-132,Chine,2012,Homo sapiens,expectoration,57.28,5.558,ST15,5,0,1,blaCTX-M-15;catA1;fosA;oqxA;qnrS1
+DEMO_0133,souche-simulée-133,Chine,2011,Homo sapiens,sang,57.28,5.559,ST15,9,0,0,aac(6')-Ib-cr;blaSHV-11;blaTEM-1;catA1;dfrA12;fosA;mph(A);oqxA;qnrS1
+DEMO_0134,souche-simulée-134,Chine,2011,Homo sapiens,écouvillon rectal,57.28,5.44,ST15,5,0,0,aph(3'')-Ib;blaTEM-1;fosA;mph(A);oqxA
+DEMO_0135,souche-simulée-135,Chine,2013,Homo sapiens,expectoration,56.96,5.635,ST15,5,0,0,aac(6')-Ib-cr;blaSHV-11;fosA;oqxA;sul2
+DEMO_0136,souche-simulée-136,Chine,2013,Homo sapiens,sang,57.2,5.633,ST15,6,0,0,blaSHV-11;catA1;fosA;mph(A);oqxA;oqxB
+DEMO_0137,souche-simulée-137,Afrique du Sud,2014,Homo sapiens,urine,57.46,5.762,ST15,4,0,0,fosA;mph(A);oqxA;sul2
+DEMO_0138,souche-simulée-138,Afrique du Sud,2015,Homo sapiens,écouvillon rectal,57.29,5.601,ST15,7,0,0,aac(6')-Ib-cr;catA1;dfrA12;fosA;mph(A);oqxA;qnrS1
+DEMO_0139,souche-simulée-139,Afrique du Sud,2014,Homo sapiens,expectoration,57.04,5.359,ST15,8,0,0,aac(6')-Ib-cr;blaSHV-11;catA1;dfrA12;fosA;mph(A);oqxA;sul1
+DEMO_0140,souche-simulée-140,Afrique du Sud,2013,Homo sapiens,écouvillon rectal,57.44,5.313,ST15,10,0,0,blaSHV-11;blaTEM-1;catA1;dfrA12;fosA;mph(A);oqxA;sul1;sul2;tet(A)
+DEMO_0141,souche-simulée-141,Afrique du Sud,2015,Homo sapiens,sang,57.13,5.507,ST15,5,0,0,fosA;oqxA;oqxB;sul1;tet(A)
+DEMO_0142,souche-simulée-142,,2015,Homo sapiens,sang,57.34,5.389,ST15,8,0,0,aph(3'')-Ib;blaSHV-11;dfrA12;fosA;mph(A);oqxA;oqxB;sul1
+DEMO_0143,souche-simulée-143,Afrique du Sud,2015,Homo sapiens,écouvillon rectal,57.44,5.43,ST15,5,0,0,fosA;oqxA;oqxB;sul2;tet(A)
+DEMO_0144,souche-simulée-144,Afrique du Sud,2014,Homo sapiens,urine,57.31,5.889,ST15,10,0,1,aph(3'')-Ib;blaCTX-M-27;blaTEM-1;catA1;fosA;oqxA;oqxB;qnrS1;sul2;tet(A)
+DEMO_0145,souche-simulée-145,Afrique du Sud,2013,Homo sapiens,sang,57.75,5.646,ST15,11,0,1,aac(6')-Ib-cr;blaCTX-M-14;blaTEM-1;catA1;fosA;mph(A);oqxA;oqxB;qnrS1;sul1;sul2
+DEMO_0146,souche-simulée-146,,2014,Homo sapiens,sang,57.04,5.961,ST15,9,0,0,aph(3'')-Ib;blaTEM-1;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;sul1
+DEMO_0147,souche-simulée-147,,2013,Homo sapiens,expectoration,57.51,5.44,ST15,9,0,0,aph(3'')-Ib;blaSHV-11;blaTEM-1;fosA;oqxA;oqxB;qnrS1;sul2;tet(A)
+DEMO_0148,souche-simulée-148,Inde,2018,Homo sapiens,urine,57.47,5.866,ST14,5,0,1,blaCTX-M-15;dfrA12;fosA;oqxA;tet(A)
+DEMO_0149,souche-simulée-149,Inde,2018,Homo sapiens,urine,57.24,5.437,ST14,9,0,1,blaCTX-M-15;blaSHV-11;fosA;mph(A);oqxA;oqxB;qnrS1;sul1;tet(A)
+DEMO_0150,souche-simulée-150,Inde,2018,Homo sapiens,urine,57.57,5.388,ST14,11,0,1,aph(3'')-Ib;blaCTX-M-14;blaSHV-11;blaTEM-1;catA1;fosA;oqxA;oqxB;qnrS1;sul1;sul2
+DEMO_0151,souche-simulée-151,,2019,Homo sapiens,sang,57.19,5.431,ST14,10,0,0,aac(6')-Ib-cr;aph(3'')-Ib;blaSHV-11;blaTEM-1;fosA;oqxA;oqxB;qnrS1;sul2;tet(A)
+DEMO_0152,souche-simulée-152,Inde,2019,Homo sapiens,urine,57.22,5.582,ST14,10,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-15;blaTEM-1;catA1;fosA;mph(A);oqxA;qnrS1;sul2
+DEMO_0153,souche-simulée-153,Inde,2019,Homo sapiens,expectoration,57.61,5.823,ST14,11,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-14;blaSHV-11;catA1;dfrA12;fosA;mph(A);oqxA;sul1;sul2
+DEMO_0154,souche-simulée-154,Inde,2019,Homo sapiens,écouvillon rectal,57.48,5.721,ST14,3,0,0,fosA;oqxA;oqxB
+DEMO_0155,souche-simulée-155,Inde,2020,Homo sapiens,écouvillon rectal,57.43,5.719,ST14,9,0,1,aph(3'')-Ib;blaCTX-M-15;blaTEM-1;dfrA12;fosA;mph(A);oqxA;oqxB;sul1
+DEMO_0156,souche-simulée-156,Inde,2019,Homo sapiens,urine,57.28,5.643,ST14,12,0,1,aac(6')-Ib-cr;blaCTX-M-14;blaSHV-11;dfrA12;fosA;mph(A);oqxA;oqxB;qnrS1;sul1;sul2;tet(A)
+DEMO_0157,souche-simulée-157,Inde,2020,Homo sapiens,expectoration,57.31,5.457,ST14,7,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-15;fosA;oqxA;oqxB;tet(A)
+DEMO_0158,souche-simulée-158,Inde,2018,Homo sapiens,sang,57.52,5.648,ST14,4,0,0,catA1;fosA;oqxA;oqxB
+DEMO_0159,souche-simulée-159,,2018,Homo sapiens,sang,57.09,5.687,ST14,9,0,0,blaSHV-11;catA1;dfrA12;fosA;mph(A);oqxA;sul1;sul2;tet(A)
+DEMO_0160,souche-simulée-160,Inde,2020,Homo sapiens,écouvillon rectal,57.04,5.416,ST14,6,0,1,aph(3'')-Ib;blaCTX-M-14;fosA;mph(A);oqxA;sul1
+DEMO_0161,souche-simulée-161,Inde,2019,Homo sapiens,expectoration,57.02,5.402,ST14,8,0,0,aph(3'')-Ib;blaTEM-1;fosA;mph(A);oqxA;qnrS1;sul2;tet(A)
+DEMO_0162,souche-simulée-162,France,2023,Homo sapiens,sang,57.49,5.682,ST23,8,1,1,aph(3'')-Ib;blaCTX-M-14;blaKPC-2;blaSHV-11;blaTEM-1;fosA;oqxA;oqxB
+DEMO_0163,souche-simulée-163,France,2023,Homo sapiens,urine,57.37,5.572,ST23,7,1,1,blaCTX-M-14;blaKPC-2;blaSHV-11;catA1;fosA;oqxA;sul1
+DEMO_0164,souche-simulée-164,France,2025,Homo sapiens,expectoration,57.3,5.46,ST23,10,1,0,blaKPC-2;blaTEM-1;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;sul1;tet(A)
+DEMO_0165,souche-simulée-165,France,2023,Homo sapiens,expectoration,57.35,5.541,ST23,4,1,0,blaKPC-2;dfrA12;fosA;oqxA
+DEMO_0166,souche-simulée-166,France,2025,Homo sapiens,écouvillon rectal,57.3,5.707,ST23,10,1,1,aph(3'')-Ib;blaCTX-M-27;blaKPC-2;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;sul2
+DEMO_0167,souche-simulée-167,France,2025,Homo sapiens,sang,57.32,5.705,ST23,6,1,1,blaCTX-M-14;blaKPC-2;blaTEM-1;fosA;oqxA;sul2
+DEMO_0168,souche-simulée-168,France,2023,Homo sapiens,sang,57.3,5.732,ST23,9,1,0,blaKPC-2;blaSHV-11;catA1;fosA;oqxA;oqxB;qnrS1;sul1;sul2
+DEMO_0169,souche-simulée-169,,2024,Homo sapiens,sang,57.12,5.589,ST23,10,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaKPC-2;blaSHV-11;blaTEM-1;fosA;oqxA;oqxB;sul1;sul2
+DEMO_0170,souche-simulée-170,France,2024,Homo sapiens,urine,57.28,5.305,ST23,6,0,0,aac(6')-Ib-cr;blaTEM-1;fosA;oqxA;qnrS1;tet(A)
+DEMO_0171,souche-simulée-171,France,2025,Homo sapiens,écouvillon rectal,57.17,5.44,ST23,8,1,0,aph(3'')-Ib;blaKPC-2;catA1;dfrA12;fosA;mph(A);oqxA;qnrS1
+DEMO_0172,souche-simulée-172,France,2024,Homo sapiens,urine,57.37,5.466,ST23,8,1,0,aph(3'')-Ib;blaKPC-2;blaSHV-11;fosA;oqxA;oqxB;sul2;tet(A)
+DEMO_0173,souche-simulée-173,France,2023,Homo sapiens,expectoration,57.37,5.429,ST23,10,1,1,aph(3'')-Ib;blaCTX-M-14;blaKPC-2;blaSHV-11;fosA;oqxA;oqxB;qnrS1;sul1;tet(A)
+DEMO_0174,souche-simulée-174,France,2016,Homo sapiens,sang,57.28,5.303,ST23,6,0,1,blaCTX-M-15;dfrA12;fosA;oqxA;oqxB;sul2
+DEMO_0175,souche-simulée-175,France,2016,Homo sapiens,expectoration,57.49,5.505,ST23,9,0,0,aac(6')-Ib-cr;aph(3'')-Ib;blaSHV-11;blaTEM-1;dfrA12;fosA;oqxA;oqxB;sul1
+DEMO_0176,souche-simulée-176,France,2016,Homo sapiens,écouvillon rectal,57.19,5.696,ST23,10,0,1,blaCTX-M-14;blaTEM-1;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;qnrS1;sul1
+DEMO_0177,souche-simulée-177,France,2016,Homo sapiens,urine,57.59,5.727,ST23,10,0,1,blaCTX-M-15;blaSHV-11;blaTEM-1;dfrA12;fosA;mph(A);oqxA;qnrS1;sul1;sul2
+DEMO_0178,souche-simulée-178,France,2016,Homo sapiens,écouvillon rectal,57.53,5.426,ST23,9,0,1,aph(3'')-Ib;blaCTX-M-14;blaSHV-11;catA1;dfrA12;fosA;mph(A);oqxA;sul2
+DEMO_0179,souche-simulée-179,France,2015,Homo sapiens,sang,57.23,5.539,ST23,9,0,1,aac(6')-Ib-cr;blaCTX-M-27;catA1;dfrA12;fosA;mph(A);oqxA;qnrS1;tet(A)
+DEMO_0180,souche-simulée-180,France,2016,Homo sapiens,écouvillon rectal,57.21,5.318,ST23,8,0,0,aac(6')-Ib-cr;aph(3'')-Ib;catA1;dfrA12;fosA;mph(A);oqxA;tet(A)
+DEMO_0181,souche-simulée-181,France,2017,Homo sapiens,urine,57.54,5.754,ST23,6,0,1,aac(6')-Ib-cr;blaCTX-M-15;fosA;oqxA;oqxB;sul2
+DEMO_0182,souche-simulée-182,France,2015,Homo sapiens,expectoration,57.39,5.743,ST23,8,0,0,aac(6')-Ib-cr;dfrA12;fosA;mph(A);oqxA;oqxB;sul1;tet(A)
+DEMO_0183,souche-simulée-183,France,2016,Homo sapiens,sang,57.33,5.425,ST23,4,0,0,catA1;fosA;oqxA;sul2
+DEMO_0184,souche-simulée-184,France,2017,Homo sapiens,sang,57.36,5.716,ST23,4,0,0,dfrA12;fosA;oqxA;sul1
+DEMO_0185,souche-simulée-185,France,2017,Homo sapiens,sang,57.36,5.561,ST23,7,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-15;fosA;mph(A);oqxA;tet(A)
+DEMO_0186,souche-simulée-186,France,2016,Homo sapiens,sang,57.53,5.268,ST23,11,0,1,blaCTX-M-14;blaSHV-11;blaTEM-1;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;qnrS1;sul2
+DEMO_0187,souche-simulée-187,France,2015,Homo sapiens,expectoration,56.97,5.361,ST23,5,0,0,aph(3'')-Ib;fosA;oqxA;qnrS1;sul2
+DEMO_0188,souche-simulée-188,,2015,Homo sapiens,urine,57.2,5.348,ST101,8,1,1,blaCTX-M-14;blaKPC-2;blaSHV-11;fosA;oqxA;qnrS1;sul1;sul2
+DEMO_0189,souche-simulée-189,Sénégal,2016,Homo sapiens,urine,57.61,5.565,ST101,9,1,1,blaCTX-M-15;blaKPC-2;blaSHV-11;dfrA12;fosA;mph(A);oqxA;qnrS1;sul1
+DEMO_0190,souche-simulée-190,Sénégal,2016,Homo sapiens,urine,57.17,5.659,ST101,10,1,0,aph(3'')-Ib;blaKPC-2;blaTEM-1;dfrA12;fosA;mph(A);oqxA;oqxB;sul2;tet(A)
+DEMO_0191,souche-simulée-191,Sénégal,2015,Homo sapiens,expectoration,57.04,5.605,ST101,10,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-15;blaKPC-2;blaSHV-11;dfrA12;fosA;oqxA;sul1;sul2
+DEMO_0192,souche-simulée-192,Sénégal,2016,Homo sapiens,urine,57.32,5.713,ST101,8,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaKPC-2;dfrA12;fosA;oqxA;oqxB;sul2
+DEMO_0193,souche-simulée-193,Sénégal,2017,Homo sapiens,urine,57.48,5.727,ST101,7,1,1,blaCTX-M-15;blaKPC-2;catA1;fosA;oqxA;qnrS1;sul1
+DEMO_0194,souche-simulée-194,Thaïlande,2010,Homo sapiens,écouvillon rectal,57.42,5.843,ST101,8,0,0,aac(6')-Ib-cr;aph(3'')-Ib;blaSHV-11;catA1;fosA;mph(A);oqxA;sul1
+DEMO_0195,souche-simulée-195,Thaïlande,2012,Homo sapiens,écouvillon rectal,57.41,5.615,ST101,5,0,0,fosA;mph(A);oqxA;sul2;tet(A)
+DEMO_0196,souche-simulée-196,Thaïlande,2011,Homo sapiens,sang,57.17,5.354,ST101,11,0,1,aac(6')-Ib-cr;blaCTX-M-27;blaSHV-11;catA1;dfrA12;fosA;mph(A);oqxA;qnrS1;sul1;sul2
+DEMO_0197,souche-simulée-197,Thaïlande,2012,Homo sapiens,urine,57.29,5.508,ST101,7,0,1,blaCTX-M-15;blaTEM-1;dfrA12;fosA;mph(A);oqxA;sul2
+DEMO_0198,souche-simulée-198,Thaïlande,2012,Homo sapiens,sang,57.1,5.482,ST101,5,0,1,aac(6')-Ib-cr;blaCTX-M-14;catA1;fosA;oqxA
+DEMO_0199,souche-simulée-199,Thaïlande,2011,Homo sapiens,écouvillon rectal,57.37,5.521,ST101,6,0,0,aph(3'')-Ib;catA1;fosA;mph(A);oqxA;qnrS1
+DEMO_0200,souche-simulée-200,Thaïlande,2011,Homo sapiens,sang,57.09,5.673,ST101,9,0,1,aph(3'')-Ib;blaCTX-M-14;blaSHV-11;blaTEM-1;catA1;fosA;mph(A);oqxA;oqxB
+DEMO_0201,souche-simulée-201,Thaïlande,2012,Homo sapiens,expectoration,57.07,5.538,ST101,8,0,1,blaCTX-M-14;blaTEM-1;dfrA12;fosA;oqxA;sul1;sul2;tet(A)
+DEMO_0202,souche-simulée-202,Brésil,2013,Homo sapiens,expectoration,57.48,5.667,ST45,8,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaKPC-3;fosA;mph(A);oqxA;oqxB;tet(A)
+DEMO_0203,souche-simulée-203,Brésil,2014,Homo sapiens,expectoration,57.44,5.709,ST45,6,1,1,aac(6')-Ib-cr;blaCTX-M-15;blaKPC-3;fosA;oqxA;qnrS1
+DEMO_0204,souche-simulée-204,Brésil,2012,Homo sapiens,urine,57.16,5.453,ST45,7,1,0,aac(6')-Ib-cr;aph(3'')-Ib;blaKPC-3;catA1;fosA;mph(A);oqxA
+DEMO_0205,souche-simulée-205,Brésil,2012,Homo sapiens,écouvillon rectal,57.23,5.574,ST45,10,1,0,aph(3'')-Ib;blaKPC-3;blaSHV-11;blaTEM-1;fosA;mph(A);oqxA;qnrS1;sul1;sul2
+DEMO_0206,souche-simulée-206,Nigeria,2024,Homo sapiens,écouvillon rectal,57.49,5.526,ST17,6,0,1,blaCTX-M-14;blaSHV-11;blaTEM-1;fosA;oqxA;tet(A)
+DEMO_0207,souche-simulée-207,Nigeria,2023,Homo sapiens,sang,57.17,5.384,ST17,5,0,1,blaCTX-M-27;dfrA12;fosA;oqxA;qnrS1
+DEMO_0208,souche-simulée-208,Nigeria,2023,Homo sapiens,écouvillon rectal,57.38,5.747,ST17,7,0,0,aac(6')-Ib-cr;aph(3'')-Ib;blaSHV-11;blaTEM-1;catA1;fosA;oqxA
+DEMO_0209,souche-simulée-209,Nigeria,2022,Homo sapiens,écouvillon rectal,57.24,5.68,ST17,5,0,0,blaTEM-1;fosA;oqxA;oqxB;sul1
+DEMO_0210,souche-simulée-210,,2023,Homo sapiens,expectoration,57.21,5.55,ST17,8,0,0,aph(3'')-Ib;blaSHV-11;blaTEM-1;dfrA12;fosA;mph(A);oqxA;sul1
+DEMO_0211,souche-simulée-211,Nigeria,2023,Homo sapiens,sang,57.59,5.512,ST17,8,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-14;blaTEM-1;catA1;fosA;mph(A);oqxA
+DEMO_0212,souche-simulée-212,Nigeria,2023,Homo sapiens,écouvillon rectal,57.32,5.558,ST17,11,0,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-15;blaSHV-11;blaTEM-1;catA1;dfrA12;fosA;mph(A);oqxA;sul2
+DEMO_0213,souche-simulée-213,Nigeria,2024,Homo sapiens,urine,57.12,5.587,ST17,6,0,1,aac(6')-Ib-cr;blaCTX-M-27;dfrA12;fosA;oqxA;sul1
+DEMO_0214,souche-simulée-214,Grèce,2024,Homo sapiens,écouvillon rectal,57.16,5.488,ST17,8,1,1,blaCTX-M-27;blaOXA-48;blaTEM-1;catA1;dfrA12;fosA;oqxA;oqxB
+DEMO_0215,souche-simulée-215,Grèce,2022,Homo sapiens,urine,57.22,5.428,ST17,10,1,1,aac(6')-Ib-cr;blaCTX-M-27;blaOXA-48;blaSHV-11;fosA;oqxA;oqxB;qnrS1;sul1;sul2
+DEMO_0216,souche-simulée-216,Grèce,2024,Homo sapiens,sang,57.35,5.831,ST17,11,1,0,aph(3'')-Ib;blaOXA-48;blaSHV-11;catA1;dfrA12;fosA;oqxA;qnrS1;sul1;sul2;tet(A)
+DEMO_0217,souche-simulée-217,Grèce,2024,Homo sapiens,sang,57.27,5.223,ST17,6,1,1,aph(3'')-Ib;blaCTX-M-27;blaOXA-48;fosA;oqxA;tet(A)
+DEMO_0218,souche-simulée-218,Grèce,2024,Homo sapiens,sang,57.03,5.278,ST17,6,1,1,blaCTX-M-27;blaOXA-48;dfrA12;fosA;mph(A);oqxA
+DEMO_0219,souche-simulée-219,Grèce,2023,Homo sapiens,sang,57.47,5.747,ST17,5,1,0,blaOXA-48;dfrA12;fosA;oqxA;qnrS1
+DEMO_0220,souche-simulée-220,Grèce,2022,Homo sapiens,expectoration,57.23,5.774,ST17,6,1,1,aph(3'')-Ib;blaCTX-M-27;blaOXA-48;dfrA12;fosA;oqxA
+DEMO_0221,souche-simulée-221,Grèce,2023,Homo sapiens,sang,57.31,5.73,ST17,12,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-27;blaOXA-48;blaTEM-1;catA1;fosA;mph(A);oqxA;oqxB;qnrS1;sul2
+DEMO_0222,souche-simulée-222,Grèce,2024,Homo sapiens,urine,57.3,5.648,ST17,8,1,0,blaOXA-48;blaSHV-11;blaTEM-1;catA1;fosA;oqxA;qnrS1;sul2
+DEMO_0223,souche-simulée-223,Grèce,2024,Homo sapiens,expectoration,57.4,5.379,ST17,10,1,0,aac(6')-Ib-cr;blaOXA-48;blaSHV-11;blaTEM-1;catA1;fosA;mph(A);oqxA;oqxB;qnrS1
+DEMO_0224,souche-simulée-224,Grèce,2022,Homo sapiens,sang,57.49,5.644,ST17,9,1,1,blaCTX-M-27;blaOXA-48;blaSHV-11;catA1;fosA;oqxA;qnrS1;sul1;tet(A)
+DEMO_0225,souche-simulée-225,Grèce,2022,Homo sapiens,urine,57.37,5.674,ST17,11,1,1,aac(6')-Ib-cr;aph(3'')-Ib;blaCTX-M-15;blaOXA-48;blaTEM-1;dfrA12;fosA;mph(A);oqxA;oqxB;qnrS1
+DEMO_0226,souche-simulée-226,Grèce,2024,Homo sapiens,sang,57.14,5.373,ST17,13,1,1,aac(6')-Ib-cr;blaCTX-M-15;blaOXA-48;blaSHV-11;catA1;dfrA12;fosA;mph(A);oqxA;oqxB;qnrS1;sul1;sul2
+DEMO_0227,souche-simulée-227,Grèce,2024,Homo sapiens,urine,57.34,5.548,ST17,8,1,1,blaCTX-M-27;blaOXA-48;blaTEM-1;dfrA12;fosA;mph(A);oqxA;sul1

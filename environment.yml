@@ -1,0 +1,12 @@
+# Environnement du pipeline bioinformatique (pas nécessaire pour lancer l'application)
+name: genomenet-pipeline
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - ncbi-datasets-cli
+  - mash
+  - mlst
+  - ncbi-amrfinderplus
+  - unzip

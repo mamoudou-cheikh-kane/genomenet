@@ -1,0 +1,4 @@
+dash>=2.16
+dash-cytoscape>=1.0
+pandas>=2.0
+gunicorn>=21.2
