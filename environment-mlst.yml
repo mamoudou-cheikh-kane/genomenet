@@ -1,0 +1,7 @@
+# Environnement séparé pour mlst (typage MLST)
+name: genomenet-mlst
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - mlst>=2.19

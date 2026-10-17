@@ -7,6 +7,15 @@ MISSING = {
     "unknown", "na", "n/a", "none", "-", "restricted access",
 }
 
+# Clés au format camelCase parfois utilisées par NCBI à la place des attributs name/value
+CAMEL_KEYS = {
+    "geoLocName": "geo_loc_name",
+    "collectionDate": "collection_date",
+    "isolationSource": "isolation_source",
+    "host": "host",
+    "strain": "strain",
+}
+
 
 def clean(value):
     value = (value or "").strip()
@@ -21,19 +30,26 @@ def read_jsonl(path):
                 yield json.loads(line)
 
 
-def biosample_attributes(record):
-    biosample = (record.get("assemblyInfo") or {}).get("biosample") or {}
-    attrs = {}
-    for attr in biosample.get("attributes") or []:
-        name = attr.get("name")
-        if name:
-            attrs[name] = attr.get("value", "")
+def collect_attributes(obj, attrs):
+    """Parcourt tout le rapport et récupère les attributs BioSample où qu'ils soient."""
+    if isinstance(obj, dict):
+        name, value = obj.get("name"), obj.get("value")
+        if isinstance(name, str) and isinstance(value, (str, int, float)):
+            if clean(str(value)) or name not in attrs:
+                attrs[name] = str(value)
+        for key, val in obj.items():
+            if key in CAMEL_KEYS and isinstance(val, (str, int, float)):
+                attrs.setdefault(CAMEL_KEYS[key], str(val))
+            collect_attributes(val, attrs)
+    elif isinstance(obj, list):
+        for item in obj:
+            collect_attributes(item, attrs)
     return attrs
 
 
 def parse_record(record):
     """Extrait les champs utiles d'un rapport d'assemblage NCBI."""
-    attrs = biosample_attributes(record)
+    attrs = collect_attributes(record, {})
     geo = clean(attrs.get("geo_loc_name") or attrs.get("country"))
     country = geo.split(":")[0].strip() if geo else ""
 

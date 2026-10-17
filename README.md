@@ -41,12 +41,13 @@ Sans données réelles dans `data/`, l'application utilise un jeu **simulé** (`
 
 ```bash
 conda env create -f environment.yml
+conda env create -f environment-mlst.yml   # mlst dans un environnement séparé
 conda activate genomenet-pipeline
-amrfinder -u                       # télécharge la base AMRFinderPlus
-bash pipeline/build_network.sh     # produit data/nodes.csv et data/edges.csv
+amrfinder -u                               # télécharge la base AMRFinderPlus
+bash pipeline/build_network.sh             # produit data/nodes.csv et data/edges.csv
 ```
 
-Paramètres modifiables par variables d'environnement : `N` (nombre de génomes, 250 par défaut), `THREADS`, `MAX_DIST` (0.01), `SEED` (42), `SPECIES` et `AMR_ORGANISM` pour changer d'espèce. Compter environ 1 Go de téléchargement et de quelques dizaines de minutes à une heure selon la machine, AMRFinderPlus étant l'étape la plus longue.
+Paramètres modifiables par variables d'environnement : `N` (nombre de génomes, 250 par défaut), `THREADS`, `MAX_DIST` (0.01), `SEED` (42), `SPECIES` et `AMR_ORGANISM` pour changer d'espèce. Compter environ 1 Go de téléchargement et de quelques dizaines de minutes à une heure selon la machine, AMRFinderPlus étant l'étape la plus longue. Si la connexion coupe, relancez simplement le script : le téléchargement reprend là où il s'était arrêté.
 
 ## Structure
 

@@ -1,4 +1,5 @@
 # Environnement du pipeline bioinformatique (pas nécessaire pour lancer l'application)
+# mlst est installé à part (environment-mlst.yml) pour éviter un conflit de versions Perl
 name: genomenet-pipeline
 channels:
   - conda-forge
@@ -7,6 +8,5 @@ dependencies:
   - python=3.11
   - ncbi-datasets-cli
   - mash
-  - mlst
   - ncbi-amrfinderplus
   - unzip
