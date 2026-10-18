@@ -22,9 +22,20 @@ datasets summary genome taxon "$SPECIES" \
   --assembly-level complete --assembly-source refseq --as-json-lines \
   > "$WORK/summary.jsonl"
 
-echo "[2/6] Tirage de ${N} génomes (graine ${SEED})"
-python pipeline/select_genomes.py "$WORK/summary.jsonl" --n "$N" --seed "$SEED" \
-  --out "$WORK/accessions.txt"
+# La liste des génomes est figée dans data/accessions.txt pour que l'analyse soit
+# reproductible : NCBI ajoute des génomes chaque jour, ce qui changerait le tirage.
+FROZEN="data/accessions.txt"
+if [ -s "$FROZEN" ]; then
+  echo "[2/6] Liste figée : $(grep -c . "$FROZEN") génomes lus dans ${FROZEN}"
+  echo "      (supprimez ce fichier pour refaire un tirage au sort)"
+  cp "$FROZEN" "$WORK/accessions.txt"
+else
+  echo "[2/6] Tirage de ${N} génomes (graine ${SEED})"
+  python pipeline/select_genomes.py "$WORK/summary.jsonl" --n "$N" --seed "$SEED" \
+    --out "$WORK/accessions.txt"
+  cp "$WORK/accessions.txt" "$FROZEN"
+  echo "      Liste enregistrée dans ${FROZEN} (à versionner avec git)"
+fi
 
 echo "[3/6] Téléchargement des séquences (reprise automatique en cas de coupure)"
 # Un dossier par liste de génomes : relancer le script reprend là où il s'était arrêté

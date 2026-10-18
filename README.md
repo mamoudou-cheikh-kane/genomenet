@@ -20,9 +20,9 @@ Réseau interactif de similarité de génomes de *Klebsiella pneumoniae*, constr
 
 ## Méthode
 
-1. **Sélection** : liste des assemblages complets RefSeq via `ncbi-datasets`, puis tirage reproductible de 250 génomes (graine fixe), en privilégiant ceux dont le pays d'origine est renseigné.
+1. **Sélection** : liste des assemblages complets RefSeq via `ncbi-datasets`, puis tirage de 250 génomes (graine fixe), en privilégiant ceux dont le pays d'origine est renseigné. NCBI ajoutant des génomes en permanence, la liste tirée est figée dans `data/accessions.txt` : relancer le pipeline réanalyse exactement les mêmes génomes.
 2. **Distances** : esquisses Mash (k = 21, 10 000 hashes) et distances toutes contre toutes. La distance Mash approxime 1 moins l'identité nucléotidique moyenne (ANI).
-3. **Typage** : MLST avec `mlst` (schéma Pasteur *Klebsiella*) et gènes de résistance avec AMRFinderPlus.
+3. **Typage** : MLST avec `mlst`, en imposant le schéma *Klebsiella* (le choix automatique du schéma s'est révélé peu fiable, voir les observations), et gènes de résistance avec AMRFinderPlus.
 4. **Réseau** : une arête relie deux génomes dont la distance est inférieure au seuil. Les groupes sont les composantes connexes du graphe.
 
 Limites assumées : un réseau à seuil n'est pas une phylogénie, et l'échantillon RefSeq reflète les biais de séquençage (surreprésentation de certains pays et des souches multirésistantes).
