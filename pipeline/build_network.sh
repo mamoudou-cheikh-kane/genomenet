@@ -115,7 +115,7 @@ fi
 
 echo "[6/6] Export CSV"
 python pipeline/to_csv.py --summary "$WORK/summary.jsonl" \
-  --accessions "$WORK/accessions.txt" --mash "$WORK/mash_dist.tsv" \
+  --accessions "$WORK/accessions.txt" --mash "$WORK/mash_dist.tsv" --fna-dir "$WORK/fna" \
   ${MLST_ARG[@]+"${MLST_ARG[@]}"} ${AMR_ARG[@]+"${AMR_ARG[@]}"} \
   --max-dist "$MAX_DIST" --outdir data
 

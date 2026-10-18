@@ -35,6 +35,21 @@ def read_mlst(path):
     return st
 
 
+def fasta_stats(path):
+    """Taille (Mb) et taux de GC (%) calculés directement à partir de la séquence."""
+    length = gc = 0
+    with open(path, encoding="utf-8") as handle:
+        for line in handle:
+            if line.startswith(">"):
+                continue
+            seq = line.strip().upper()
+            length += len(seq)
+            gc += seq.count("G") + seq.count("C")
+    if not length:
+        return None, None
+    return round(length / 1e6, 3), round(100 * gc / length, 2)
+
+
 def read_amr(amr_dir, accession):
     """Sortie tabulée d'AMRFinderPlus (colonnes v3 ou v4)."""
     path = Path(amr_dir) / f"{accession}.tsv" if amr_dir else None
@@ -68,6 +83,8 @@ def main():
     parser.add_argument("--mash", required=True, help="Sortie de `mash dist`")
     parser.add_argument("--mlst", default=None)
     parser.add_argument("--amr-dir", default=None)
+    parser.add_argument("--fna-dir", default=None,
+                        help="Dossier des génomes, pour calculer taille et GC absents chez NCBI")
     parser.add_argument("--max-dist", type=float, default=0.01)
     parser.add_argument("--outdir", default="data")
     args = parser.parse_args()
@@ -78,6 +95,17 @@ def main():
         parsed = parse_record(record)
         if parsed["id"] in wanted:
             meta[parsed["id"]] = parsed
+
+    if args.fna_dir:
+        computed = 0
+        for acc, row in meta.items():
+            fna = Path(args.fna_dir) / f"{acc}.fna"
+            if (row["gc_percent"] is None or row["length_mb"] is None) and fna.exists():
+                length_mb, gc = fasta_stats(fna)
+                row["length_mb"] = row["length_mb"] if row["length_mb"] is not None else length_mb
+                row["gc_percent"] = row["gc_percent"] if row["gc_percent"] is not None else gc
+                computed += 1
+        print(f"Taille et GC calculés depuis les séquences pour {computed} génomes")
 
     st = read_mlst(args.mlst)
     for acc, row in meta.items():
