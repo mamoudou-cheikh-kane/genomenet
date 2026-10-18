@@ -27,6 +27,14 @@ Réseau interactif de similarité de génomes de *Klebsiella pneumoniae*, constr
 
 Limites assumées : un réseau à seuil n'est pas une phylogénie, et l'échantillon RefSeq reflète les biais de séquençage (surreprésentation de certains pays et des souches multirésistantes).
 
+## Observations
+
+**1. Le choix automatique du schéma MLST n'est pas fiable ici.** Pour 66 génomes sur 250, mlst obtient un score parfait à la fois dans le schéma *Klebsiella* et dans le schéma *E. coli* d'Achtman, et choisit alors arbitrairement : 36 génomes (14 %) ont ainsi été typés comme *E. coli* (ST14464, ST11307, ST7362). Les distances Mash les plaçaient pourtant au cœur des lignées de *K. pneumoniae*, et le typage avec le schéma *Klebsiella* imposé les attribue à ST11 (20), ST307 (6), ST258 (4), ST512 (2), ST437 (2), ST35 (1) et ST340 (1). Chaque profil *E. coli* correspond toujours à la même lignée de *Klebsiella* (ST14464 au complexe clonal CG258, ST11307 à ST307, ST7362 à ST35), ce qui suggère que la base *E. coli* contient des profils issus de souches de *Klebsiella*, plutôt qu'une contamination des génomes. Conséquence pratique : imposer le schéma quand l'espèce est connue, et croiser deux méthodes indépendantes.
+
+**2. La résistance aux carbapénèmes se concentre dans quelques clones à haut risque.** Elle touche ST11 (37 génomes sur 39), ST258 (11 sur 11), ST147 (10 sur 10), ST231 (8 sur 8) et ST307 (10 sur 11). À l'inverse, ST23, lignée décrite comme hypervirulente, n'en porte que dans 3 cas sur 11. Ces trois cas méritent attention, car la convergence entre virulence et résistance est une préoccupation majeure ; la confirmer demanderait de rechercher les gènes de virulence, par exemple avec Kleborate.
+
+**3. L'échantillon public reflète l'effort de séquençage plus que l'épidémiologie.** La Chine et Taïwan fournissent 115 génomes sur 250 (46 %), et 169 génomes (68 %) portent une carbapénémase, car les souches multirésistantes sont séquencées en priorité. L'Afrique ne compte que 4 génomes sur 250 (1,6 % : Malawi, Égypte, Ghana), et aucun d'Afrique de l'Ouest.
+
 ## Lancer l'application en local
 
 ```bash
