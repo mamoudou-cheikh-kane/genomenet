@@ -1,7 +1,10 @@
 # Environnement séparé pour mlst (typage MLST)
+# perl>=5.32 est imposé : sans cela, conda peut installer un Perl trop ancien pour mlst
 name: genomenet-mlst
 channels:
   - conda-forge
   - bioconda
+channel_priority: strict
 dependencies:
-  - mlst>=2.19
+  - mlst>=2.23
+  - perl>=5.32

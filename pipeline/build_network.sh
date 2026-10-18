@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 # Construit data/nodes.csv et data/edges.csv à partir de génomes NCBI.
 # Usage : bash pipeline/build_network.sh
-# Variables modifiables : SPECIES, N, THREADS, MAX_DIST, SEED, MLST_CMD
+# Variables modifiables : SPECIES, N, THREADS, MAX_DIST, SEED, MLST_SCHEME, MLST_CMD
 set -euo pipefail
 
 SPECIES="${SPECIES:-Klebsiella pneumoniae}"
 AMR_ORGANISM="${AMR_ORGANISM:-Klebsiella_pneumoniae}"
+# Schéma MLST imposé : le choix automatique de mlst peut se tromper d'espèce
+MLST_SCHEME="${MLST_SCHEME:-klebsiella}"
 N="${N:-250}"
 THREADS="${THREADS:-4}"
 MAX_DIST="${MAX_DIST:-0.01}"
@@ -62,9 +64,10 @@ mash dist -p "$THREADS" "$WORK/genomes.msh" "$WORK/genomes.msh" > "$WORK/mash_di
 
 echo "[5/6] Typage MLST et gènes de résistance (optionnels)"
 # mlst tourne dans son propre environnement conda (voir environment-mlst.yml)
+CONDA_BIN="${CONDA_EXE:-$HOME/miniforge3/bin/conda}"
 if [ -z "${MLST_CMD:-}" ]; then
-  if "${CONDA_EXE:-conda}" env list 2>/dev/null | grep -q "^genomenet-mlst "; then
-    MLST_CMD="${CONDA_EXE:-conda} run --no-capture-output -n genomenet-mlst mlst"
+  if "$CONDA_BIN" run -n genomenet-mlst mlst --version >/dev/null 2>&1; then
+    MLST_CMD="$CONDA_BIN run --no-capture-output -n genomenet-mlst mlst"
   else
     MLST_CMD="mlst"
   fi
@@ -72,9 +75,9 @@ fi
 
 MLST_ARG=()
 if $MLST_CMD --version >/dev/null 2>&1; then
-  if $MLST_CMD --threads "$THREADS" "$WORK"/fna/*.fna > "$WORK/mlst.tsv" 2>"$WORK/mlst.log"; then
+  if $MLST_CMD --quiet --scheme "$MLST_SCHEME" --threads "$THREADS" "$WORK"/fna/*.fna > "$WORK/mlst.tsv" 2>"$WORK/mlst.log"; then
     MLST_ARG=(--mlst "$WORK/mlst.tsv")
-    echo "  mlst : terminé"
+    echo "  mlst : terminé (schéma ${MLST_SCHEME})"
   else
     echo "  mlst a échoué (détails dans $WORK/mlst.log) : étape ignorée"
   fi
