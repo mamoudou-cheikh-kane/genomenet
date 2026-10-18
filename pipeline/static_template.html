@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GenomeNet · réseau de génomes de Klebsiella pneumoniae</title>
+<meta name="description" content="Réseau interactif de similarité de génomes de Klebsiella pneumoniae : lignées, résistance aux carbapénèmes, origine géographique.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+:root { --bg:#eef2f0; --ink:#12343b; --muted:#5b7076; --panel:#fff; --line:#d5dedb; --accent:#e0a526; }
+* { box-sizing: border-box; }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"IBM Plex Sans","Segoe UI",Arial,sans-serif; font-size:15px; line-height:1.5; }
+.page { max-width:1500px; margin:0 auto; padding:24px 28px 16px; }
+h1 { font-family:"Source Serif 4",Georgia,serif; font-size:2.4rem; margin:0; letter-spacing:-0.01em; }
+.top p { margin:4px 0 0; color:var(--muted); max-width:75ch; }
+.banner { margin-top:12px; padding:8px 12px; border-left:4px solid var(--accent); background:#fbf4e2; max-width:75ch; }
+.grid { display:grid; grid-template-columns:280px 1fr 300px; gap:16px; margin-top:20px; height:calc(100vh - 190px); min-height:560px; }
+.panel { background:var(--panel); border:1px solid var(--line); border-radius:6px; padding:16px; overflow-y:auto; }
+#cy { padding:0; overflow:hidden; position:relative; }
+label.title { display:block; font-weight:600; margin:16px 0 6px; }
+label.title:first-child { margin-top:0; }
+.hint { color:var(--muted); font-size:.85rem; margin:6px 0 0; }
+select, input[type=search] { width:100%; font:inherit; color:var(--ink); padding:7px 9px; border:1px solid #b9c6c3; border-radius:4px; background:#fff; }
+input[type=range] { width:100%; accent-color:var(--ink); }
+.range-row { display:flex; justify-content:space-between; font-size:.8rem; color:var(--muted); }
+#thr-value { font-weight:600; color:var(--ink); }
+.check { display:flex; align-items:center; gap:8px; margin-top:16px; }
+.stats { margin-top:18px; padding-top:12px; border-top:1px solid var(--line); display:grid; gap:2px; font-size:.9rem; }
+.stats strong { font-size:1.05rem; }
+.legend { margin-top:14px; display:grid; gap:4px; font-size:.88rem; }
+.legend-item { display:flex; align-items:center; gap:8px; }
+.swatch { width:12px; height:12px; border-radius:50%; flex:none; }
+.details h2 { font-family:"Source Serif 4",Georgia,serif; margin:0 0 12px; font-size:1.3rem; }
+.details h3 { font-size:.95rem; margin:16px 0 6px; }
+.details dl { display:grid; grid-template-columns:auto 1fr; gap:4px 12px; margin:0; }
+.details dt { color:var(--muted); }
+.details dd { margin:0; overflow-wrap:anywhere; }
+.details a { display:inline-block; margin-top:16px; color:var(--ink); font-weight:600; }
+.genes { display:flex; flex-wrap:wrap; gap:4px; }
+.gene { font-size:.8rem; padding:1px 7px; border-radius:10px; background:#e1ecee; }
+.foot { margin-top:12px; color:var(--muted); font-size:.82rem; }
+.foot a { color:var(--ink); }
+#loading { position:absolute; inset:0; display:flex; align-items:center; justify-content:center; color:var(--muted); pointer-events:none; }
+:focus-visible { outline:2px solid var(--accent); outline-offset:2px; }
+@media (max-width:1050px) { .grid { grid-template-columns:1fr; height:auto; } #cy { height:70vh; } }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="top">
+    <h1>GenomeNet</h1>
+    <p id="intro"></p>
+    <div id="banner" class="banner" hidden>Données simulées pour la démonstration.</div>
+  </header>
+  <main class="grid">
+    <aside class="panel">
+      <label class="title" for="thr">Seuil de distance Mash</label>
+      <input type="range" id="thr">
+      <div class="range-row"><span>0</span><span id="thr-value"></span><span id="thr-max"></span></div>
+      <p class="hint">Environ 0,001 correspond à des souches très proches, typiques d’une transmission récente.</p>
+
+      <label class="title" for="color">Couleur des nœuds</label>
+      <select id="color"></select>
+
+      <label class="title" for="layout">Disposition</label>
+      <select id="layout">
+        <option value="fcose">Force (fcose)</option>
+        <option value="cose">Force (cose)</option>
+        <option value="concentric">Concentrique</option>
+        <option value="circle">Cercle</option>
+        <option value="grid">Grille</option>
+      </select>
+
+      <label class="title" for="search">Rechercher un génome</label>
+      <input type="search" id="search" list="genomes" placeholder="Accession ou souche">
+      <datalist id="genomes"></datalist>
+
+      <label class="check"><input type="checkbox" id="hide"> Masquer les génomes isolés</label>
+
+      <div id="stats" class="stats"></div>
+      <div id="legend" class="legend"></div>
+    </aside>
+    <section class="panel" id="cy"><div id="loading">Chargement du réseau…</div></section>
+    <aside class="panel details" id="details"><p class="hint">Cliquez sur un génome pour voir sa fiche.</p></aside>
+  </main>
+  <footer class="foot">
+    Données : NCBI RefSeq. Distances : Mash. Typage : mlst (schéma <i>Klebsiella</i>), AMRFinderPlus.
+    Version statique (Cytoscape.js) de l’application Dash.
+    <a href="https://github.com/mamoudou-cheikh-kane/genomenet" target="_blank" rel="noopener">Code source et méthode</a>
+  </footer>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/cytoscape@3.30.2/dist/cytoscape.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/layout-base@2.0.1/layout-base.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cose-base@2.2.0/cose-base.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/cytoscape-fcose@2.2.0/cytoscape-fcose.js"></script>
+<script id="genomenet-data" type="application/json">__GENOMENET_DATA__</script>
+<script>
+(function () {
+  "use strict";
+  const DATA = JSON.parse(document.getElementById("genomenet-data").textContent);
+  const NODES = DATA.nodes, EDGES = DATA.edges;
+  const BY_ID = Object.fromEntries(NODES.map(n => [n.id, n]));
+  const PALETTE = ["#1f6f78","#e0a526","#b5446e","#3f7cc4","#6a9a3a","#8a5cc2","#d9623b","#2a9d8f","#a0522d","#5c6f91","#c2a83e","#7b3f61"];
+  const GREY = "#b9c0c4";
+  const MAX = EDGES.length ? Math.max(...EDGES.map(e => e[2])) : 0.01;
+  const HAS_ST = NODES.some(n => n.st), HAS_AMR = NODES.some(n => n.n_amr !== null);
+  const $ = id => document.getElementById(id);
+  const fmt = x => x.toFixed(4).replace(".", ",");
+
+  try { if (window.cytoscapeFcose) cytoscape.use(cytoscapeFcose); } catch (e) { /* déjà enregistré */ }
+
+  // ---------------------------------------------------------------- interface
+  $("intro").innerHTML = `Réseau de similarité de ${NODES.length} génomes de <i>${DATA.species}</i>. ` +
+    "Deux génomes sont reliés quand leur distance Mash est sous le seuil choisi.";
+  if (DATA.demo) $("banner").hidden = false;
+
+  const thr = $("thr");
+  thr.min = 0; thr.max = MAX; thr.step = "any";
+  thr.value = Math.min(0.0025, MAX);
+  $("thr-max").textContent = fmt(MAX);
+
+  const colorOptions = [["cluster", "Groupe au seuil choisi"]];
+  if (HAS_ST) colorOptions.push(["st", "Lignée (ST)"]);
+  colorOptions.push(["country", "Pays"], ["year", "Année de prélèvement"]);
+  if (HAS_AMR) colorOptions.push(["carba", "Carbapénémase"]);
+  $("color").innerHTML = colorOptions.map(([v, l]) => `<option value="${v}">${l}</option>`).join("");
+  $("color").value = HAS_ST ? "st" : "cluster";
+
+  $("genomes").innerHTML = NODES.map(n =>
+    `<option value="${n.id}">${[n.st, n.country, n.strain].filter(Boolean).join(" · ")}</option>`).join("");
+
+  // ---------------------------------------------------------------- calculs
+  function components(ids, kept) {
+    const parent = new Map(ids.map(i => [i, i]));
+    const find = x => { while (parent.get(x) !== x) { parent.set(x, parent.get(parent.get(x))); x = parent.get(x); } return x; };
+    for (const [a, b] of kept) { const ra = find(a), rb = find(b); if (ra !== rb) parent.set(ra, rb); }
+    const groups = new Map();
+    for (const i of ids) { const r = find(i); if (!groups.has(r)) groups.set(r, []); groups.get(r).push(i); }
+    const ordered = [...groups.values()].sort((x, y) => y.length - x.length);
+    const label = {};
+    let rank = 0;
+    for (const g of ordered) {
+      if (g.length === 1) label[g[0]] = "Isolé";
+      else { rank += 1; for (const m of g) label[m] = `Groupe ${rank}`; }
+    }
+    return { label, ordered };
+  }
+
+  function categorical(values) {
+    const counts = {};
+    for (const v of values) counts[v] = (counts[v] || 0) + 1;
+    const skip = new Set(["", "Inconnu", "Isolé", "ST inconnu"]);
+    const keep = Object.entries(counts).filter(([v]) => !skip.has(v))
+      .sort((a, b) => b[1] - a[1]).slice(0, PALETTE.length).map(([v]) => v);
+    const map = Object.fromEntries(keep.map((v, i) => [v, PALETTE[i]]));
+    const colors = values.map(v => map[v] || GREY);
+    const legend = keep.map(v => [v, map[v]]);
+    if (colors.includes(GREY)) legend.push(["Autres ou non renseigné", GREY]);
+    return { colors, legend };
+  }
+
+  function yearColors(years) {
+    const known = years.filter(y => y !== null);
+    if (!known.length) return { colors: years.map(() => GREY), legend: [["Année non renseignée", GREY]] };
+    const lo = Math.min(...known), hi = Math.max(...known);
+    const a = [225, 236, 238], b = [18, 52, 59];
+    const mix = y => { const t = hi === lo ? 0 : (y - lo) / (hi - lo);
+      return "#" + a.map((s, i) => Math.round(s + (b[i] - s) * t).toString(16).padStart(2, "0")).join(""); };
+    return { colors: years.map(y => y === null ? GREY : mix(y)),
+             legend: [[String(lo), mix(lo)], [String(hi), mix(hi)], ["Non renseignée", GREY]] };
+  }
+
+  const yesNo = v => v === null || v === undefined ? "Non renseigné" : (v ? "Oui" : "Non");
+
+  // ---------------------------------------------------------------- graphe
+  const cy = cytoscape({
+    container: $("cy"), minZoom: 0.2, maxZoom: 4, wheelSensitivity: 0.3,
+    style: [
+      { selector: "node", style: { "background-color": "data(color)", width: "data(size)", height: "data(size)",
+        "border-width": 1, "border-color": "#ffffff" } },
+      { selector: "edge", style: { width: "mapData(sim, 0, 1, 0.6, 3.5)", "line-color": "#8fa3a8",
+        opacity: 0.45, "curve-style": "haystack" } },
+      { selector: "node:selected", style: { "border-width": 3, "border-color": "#12343b", label: "data(label)",
+        "font-size": 9, "text-valign": "top", "text-margin-y": -4 } },
+      { selector: ".focus", style: { "border-width": 3, "border-color": "#12343b", label: "data(label)", "font-size": 9 } },
+      { selector: "node.neighbor", style: { label: "data(label)", "font-size": 7 } },
+      { selector: "edge.neighbor", style: { "line-color": "#12343b", opacity: 0.9 } },
+      { selector: ".faded", style: { opacity: 0.12 } },
+    ],
+  });
+
+  const state = { clusterOf: {}, focus: null };
+
+  function layoutOptions() {
+    const name = $("layout").value;
+    if (name === "fcose") return { name: "fcose", quality: "default", randomize: true, animate: false,
+      nodeRepulsion: 6000, idealEdgeLength: 50, nodeSeparation: 60, padding: 20 };
+    if (name === "cose") return { name: "cose", animate: false, padding: 20, randomize: true };
+    return { name, animate: false, padding: 20 };
+  }
+
+  function rebuild() {
+    const t = parseFloat(thr.value);
+    $("thr-value").textContent = fmt(t);
+    const kept = EDGES.filter(e => e[2] <= t);
+    const { label, ordered } = components(NODES.map(n => n.id), kept);
+    state.clusterOf = label;
+    const degree = {};
+    for (const [a, b] of kept) { degree[a] = (degree[a] || 0) + 1; degree[b] = (degree[b] || 0) + 1; }
+    const visible = $("hide").checked ? NODES.filter(n => degree[n.id]) : NODES;
+    const shown = new Set(visible.map(n => n.id));
+
+    const els = visible.map(n => ({ group: "nodes", data: { id: n.id, label: n.st || n.id, color: GREY,
+      size: 14 + Math.min(n.n_amr || 0, 25) * 0.8 } }));
+    for (const [a, b, d] of kept) {
+      if (shown.has(a) && shown.has(b))
+        els.push({ group: "edges", data: { id: a + "__" + b, source: a, target: b, distance: d, sim: t ? 1 - d / t : 1 } });
+    }
+    cy.batch(() => { cy.elements().remove(); cy.add(els); });
+    recolor();
+    applyFocus();
+    cy.layout(layoutOptions()).run();
+
+    const multi = ordered.filter(g => g.length > 1);
+    $("stats").innerHTML =
+      `<div><strong>${visible.length}</strong> génomes affichés</div>` +
+      `<div><strong>${cy.edges().length}</strong> liens</div>` +
+      `<div><strong>${multi.length}</strong> groupes de plus d’un génome</div>` +
+      `<div><strong>${multi.length ? multi[0].length : 0}</strong> génomes dans le plus grand groupe</div>`;
+    const loading = $("loading"); if (loading) loading.remove();
+  }
+
+  function recolor() {
+    const mode = $("color").value;
+    const ids = cy.nodes().map(n => n.id());
+    const rows = ids.map(id => BY_ID[id]);
+    let res;
+    if (mode === "year") res = yearColors(rows.map(r => r.year));
+    else if (mode === "carba") {
+      const map = { "Oui": "#b5446e", "Non": "#1f6f78", "Non renseigné": GREY };
+      const vals = rows.map(r => yesNo(r.carba));
+      res = { colors: vals.map(v => map[v]), legend: Object.entries(map).filter(([k]) => vals.includes(k)) };
+    } else if (mode === "cluster") res = categorical(ids.map(id => state.clusterOf[id]));
+    else res = categorical(rows.map(r => r[mode] || "Inconnu"));
+    cy.batch(() => ids.forEach((id, i) => cy.getElementById(id).data("color", res.colors[i])));
+    $("legend").innerHTML = res.legend.map(([l, c]) =>
+      `<div class="legend-item"><span class="swatch" style="background:${c}"></span><span>${l}</span></div>`).join("");
+  }
+
+  function applyFocus() {
+    cy.elements().removeClass("focus neighbor faded");
+    if (!state.focus) return;
+    const node = cy.getElementById(state.focus);
+    if (node.empty()) return;
+    const hood = node.closedNeighborhood();
+    hood.addClass("neighbor");
+    node.removeClass("neighbor").addClass("focus");
+    cy.elements().not(hood).addClass("faded");
+  }
+
+  function showDetails(id) {
+    const n = BY_ID[id];
+    const v = (x, suffix = "") => (x === null || x === undefined || x === "") ? "Non renseigné" : `${x}${suffix}`;
+    const fields = [["Souche", v(n.strain)], ["Lignée", v(n.st)], ["Pays", v(n.country)], ["Année", v(n.year)],
+      ["Hôte", v(n.host)], ["Prélèvement", v(n.source)], ["Taille", v(n.len, " Mb")], ["GC", v(n.gc, " %")],
+      ["Carbapénémase", yesNo(n.carba)], ["BLSE (CTX-M)", yesNo(n.esbl)]];
+    const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+    let html = `<h2>${esc(n.id)}</h2><dl>` + fields.map(([k, x]) => `<dt>${k}</dt><dd>${esc(x)}</dd>`).join("") + "</dl>";
+    if (n.genes.length) html += `<h3>Gènes de résistance (${n.genes.length})</h3><div class="genes">` +
+      n.genes.map(g => `<span class="gene">${esc(g)}</span>`).join("") + "</div>";
+    if (!DATA.demo) html += `<a href="https://www.ncbi.nlm.nih.gov/datasets/genome/${encodeURIComponent(n.id)}/" target="_blank" rel="noopener">Voir la fiche NCBI</a>`;
+    $("details").innerHTML = html;
+  }
+
+  // ---------------------------------------------------------------- événements
+  thr.addEventListener("input", () => { $("thr-value").textContent = fmt(parseFloat(thr.value)); });
+  thr.addEventListener("change", rebuild);
+  $("hide").addEventListener("change", rebuild);
+  $("layout").addEventListener("change", () => cy.layout(layoutOptions()).run());
+  $("color").addEventListener("change", recolor);
+  $("search").addEventListener("input", e => {
+    const id = e.target.value.trim().split(" ")[0];
+    if (BY_ID[id]) { state.focus = id; applyFocus(); showDetails(id);
+      const node = cy.getElementById(id); if (node.nonempty()) cy.animate({ center: { eles: node }, duration: 300 }); }
+    else if (!e.target.value) { state.focus = null; applyFocus(); }
+  });
+  cy.on("tap", "node", e => showDetails(e.target.id()));
+
+  if (!window.cytoscapeFcose) { $("layout").value = "cose"; $("layout").querySelector('[value="fcose"]').disabled = true; }
+  rebuild();
+})();
+</script>
+</body>
+</html>

@@ -1,6 +1,6 @@
 # GenomeNet
 
-**Démo en ligne : https://VOTRE-LIEN-DE-DEMO**
+**Démo en ligne : https://mamoudou-cheikh-kane.github.io/genomenet/**
 
 Réseau interactif de similarité de génomes de *Klebsiella pneumoniae*, construit à partir des assemblages complets de NCBI RefSeq et exploré avec Dash et Cytoscape.
 
@@ -68,16 +68,23 @@ pipeline/build_network.sh   pipeline complet
 pipeline/select_genomes.py  tirage des génomes
 pipeline/to_csv.py          fusion Mash, MLST, AMR et métadonnées
 pipeline/ncbi_meta.py       lecture des rapports NCBI
-Dockerfile                  déploiement (Hugging Face Spaces, Render)
+pipeline/build_static.py    génération de la démo statique (docs/index.html)
+Dockerfile                  déploiement de l'application Dash en conteneur
 ```
 
-## Déploiement
+## Démo en ligne
 
-Le `Dockerfile` lance l'application avec gunicorn sur le port 7860 (ou `$PORT` s'il est défini), ce qui convient à Hugging Face Spaces (type Docker) et à Render.
+La démo publique est une version statique de l'application : une seule page HTML (`docs/index.html`) qui embarque les données et affiche le réseau avec Cytoscape.js, la bibliothèque sur laquelle repose Dash Cytoscape. Elle est servie gratuitement par GitHub Pages, sans serveur ni mise en veille. Pour la régénérer après une mise à jour des données :
+
+```bash
+python pipeline/build_static.py
+```
+
+L'application Dash (`app.py`) reste la version de référence pour un usage local. Le `Dockerfile` permet aussi de la déployer sur un hébergeur qui exécute des conteneurs.
 
 ## Outils
 
-Python, Dash, Dash Cytoscape, pandas, NCBI Datasets, Mash, mlst, AMRFinderPlus, Docker.
+Python, Dash, Dash Cytoscape, Cytoscape.js, pandas, NCBI Datasets, Mash, mlst, AMRFinderPlus, Docker.
 
 ## Licence
 
